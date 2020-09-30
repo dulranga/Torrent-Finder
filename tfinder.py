@@ -15,16 +15,16 @@ colours = {
     'darkyellow': Fore.YELLOW
 }
 
-logo = """   
-                        ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄   
-                        ██▄▄ ▄▄█▀▄▄▀█ ▄▄▀█ ▄▄▀█ ▄▄█ ▄▄▀█▄ ▄████ ▄▄▄██▄██ ▄▄▀█ ▄▀█ ▄▄█ ▄▄▀██   
-                        ████ ███ ██ █ ▀▀▄█ ▀▀▄█ ▄▄█ ██ ██ █████ ▄▄███ ▄█ ██ █ █ █ ▄▄█ ▀▀▄██   
-                        ████ ████▄▄██▄█▄▄█▄█▄▄█▄▄▄█▄██▄██▄█████ ████▄▄▄█▄██▄█▄▄██▄▄▄█▄█▄▄██   
-                        ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀   
-"""
+logo = """
+		 _____   _____ _           _
+		|_   _| |  ___(_)_ __   __| | ___ _ __
+		  | |   | |_  | | '_ \ / _` |/ _ \ '__|
+		  | |_  |  _| | | | | | (_| |  __/ |
+		  |_(_) |_|   |_|_| |_|\__,_|\___|_|
+ """
 credit = '''
-                             [+] by Cypher               [+] connected with - 1337x.to
---------------------------------------------------------------------------------------------------------------------'''
+     [+] by Cypher               [+] connected with - 1337x.to
+----------------------------------------------------------------'''
 
 print(colours['green'] + logo + '\n' + credit)
 
@@ -134,9 +134,9 @@ def find_film(pageNo=1):
                 sizes[abc] = sizes[abc][:-1]  # sizes එකේ අදාල element එක අන්තිම අකුර හලලා ගන්නවා
 
         print(colours['darkyellow'])
-        print("===================================================================================================")
+        print("================================================")
         print("   [+] These torrent are found [+] ")
-        print("===================================================================================================\n\n")
+        print("================================================\n\n")
 
         for list in range(len(names)):
             # names list එකේ element ගාන ඉවර වෙනකන් (names,seeds,sizes,leech මේවා ඔක්කොම length එක සමානයි
@@ -177,7 +177,7 @@ def find_film(pageNo=1):
                 print(colours['white'] + "[+] Browser opening ... Wait until page load ...")
 
                 time.sleep(3)
-                webbrowser.open_new_tab(iLink)  # ඒ link එකෙන් browser එකේ run කරලා torrent file එක download කර ගන්නවා
+                os.system(f"termux-open-url {iLink}")  # ඒ link එකෙන් browser එකේ run කරලා torrent file එක download කර ගන්නවා
 
                 print(colours['cyan'] + "\n[+] This program will exit in 10 seconds\n[+] Thank for using")
                 time.sleep(10)
